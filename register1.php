@@ -12,7 +12,7 @@ if(!empty($_POST["email"]) && !empty($_POST["fname"]) && !empty($_POST["pass"]))
 
 	$row = $results->fetch_assoc();
 		
-	$sql = $link->prepare("INSERT INTO users(fname,lname,email,password,url,bdate)
+	$sql = $link->prepare("INSERT INTO users(name,email,password)
 	VALUES ('".$_POST["fname"]."','".$_POST["email"]."','".$_POST["pass"]."')");
 	
 	$sql->execute();

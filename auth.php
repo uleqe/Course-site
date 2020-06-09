@@ -82,13 +82,13 @@
             <span class="error text-danger" id="error1" style="display: none"></span>    
             <!-- <?php //include('error.php'); ?> -->
             <div class="form-group">
-                <input type="email" class="form-control" style="font-size: 110%" placeholder="Username" name="log_name" required>
+                <input type="email" id="email" class="form-control" style="font-size: 110%" placeholder="Enter email" name="log_name" required>
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" style="font-size: 110%" placeholder="Password" name="log_pass" required>
+                <input type="password" id="password" class="form-control" style="font-size: 110%" placeholder="Enter password" name="log_pass" required>
             </div>
             <div class="form-group">
-                <button id="sign-in" type="submit" class="btn btn-primary btn-block" style="font-size: 110%" style="color: hsl(211, 100%, 50%);" name="login">Log in</button>
+                <input id="sign-in" type="submit" class="btn btn-primary btn-block" style="font-size: 110%" style="color: hsl(211, 100%, 50%);" name="login" value="Sign-in"></input>
             </div>
             <div class="clearfix">
                 <label class="pull-left checkbox-inline"><input type="checkbox">Remember me</label>

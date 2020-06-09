@@ -7,7 +7,7 @@ if(!empty($_POST["username"]) && !empty($_POST["password"])) {
 
     require_once "link.php";
 
-    $stmt = $link->prepare("SELECT name FROM users WHERE email = ? AND password = ?");
+    $stmt = $link->prepare("SELECT email FROM users WHERE email = ? AND password = ?");
     $stmt->bind_param("ss", $email, $pass);
 
     $stmt->execute();
@@ -19,7 +19,7 @@ if(!empty($_POST["username"]) && !empty($_POST["password"])) {
     if ($row != null && $row['email'] != null) {
         session_start();
         $_SESSION['user'] = array(
-            'name' => $row['name']
+            'email' => $row['email']
         );
 
         $return = array(
