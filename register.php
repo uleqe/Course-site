@@ -39,13 +39,13 @@
                         if (data.message == 'success') {
                            window.location.href = "auth.php";
                            $("#success").text('You successfully created an account');
-                           $("#success").hide(10000);
+                           $("#success").show();
                         }
                     },
                     error: function (errorData, textStatus ,errorMessage) {
                         var msg = (errorData.responseJSON != null) ? errorData.responseJSON.errorMessage : '';
                         $("#error2").text('Error: ' + msg);
-                        $("#error2").hide(10000);
+                        $("#error2").show();
                     }
                 });               
             });
