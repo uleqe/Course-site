@@ -112,15 +112,16 @@
         </div>
 
         <!-- Course list -->
-        <div id="courses" class="">
-            <div class="m-section image-left-section">
+        <div id="courses" class="container container-login">
+        <div class="row">
+            <div class="col-md-8">
                 <div class="m-subsection">
                     <div class="float-left hide-on-medium-down align-middle">
                         <img src="photo/page-01.jpeg" width="370" height="330" alt="Placeholder picture" class="m-image750" />
                     </div>
                 </div>
             </div>
-            <div class="float-right align-middle">
+            <div class="col-md-4" style="">
                 <div class="m-header">
                     <div class="m-header-text large" role="heading">
                         Drive success
@@ -130,15 +131,15 @@
                     </div>
                 </div>
             </div>
-
             <!-- C++ -->
-            <div class="m-subsection">
+            <div class="col-md-8">
+                <div class="m-subsection">
                     <div class="float-left hide-on-medium-down align-middle">
-                        <img src="photo/c++.jpg" width="370" height="330" alt="Placeholder picture" class="m-image750" />
+                        <img src="photo/c++.jpg" width="370" height="330" alt="Placeholder picture" class="m-image750"/>
                     </div>
                 </div>
-            </div>
-            <div class="float-right align-middle">
+            </div>    
+            <div class="col-md-4">
                 <div class="m-header">
                     <div class="m-header-text large" role="heading">
                         Intro to C++
@@ -149,8 +150,10 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
-    
+
+
     <!-- Course lists -->
     <!-- <div class="m-section image-left-section" style="background-color: #FFFFFF">
         <div class="m-subsection">
