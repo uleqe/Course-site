@@ -1,21 +1,6 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['user'])) {
-    header("Location: auth.php");
-    return;
-}
-
-require_once "link.php";
-$stmt = $link->prepare("SELECT * FROM users WHERE email = ?");
-$stmt->bind_param("s", $_SESSION['user']['email']);
-
-$stmt->execute();
-
-$result = $stmt->get_result();
-
-$row = $result->fetch_assoc();
-
+include_once 'session.php';
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +35,7 @@ $row = $result->fetch_assoc();
         <!-- <a class="btn btn-outline-primary" href="auth.php" style="font-size: 105%">
         Sign-in
         </a> -->
-        <a href="register.php">
+        <a href="profile.php" style="color:blue;">
         <?php 
             print $row['name'];
         ?>
