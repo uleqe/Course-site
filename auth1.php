@@ -36,7 +36,7 @@ if(!empty($_POST["username"]) && !empty($_POST["password"])) {
 }
 else{
     $return = array(
-        'errorMessage' => "Login attempt denied."
+        'errorMessage' => "Data is empty!"
     );
     http_response_code(403);
 }

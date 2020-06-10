@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if (!isset($_SESSION['user'])) {
+    if (isset($_SESSION['user'])) {
         header("Location: main.php");
         return;
     }
@@ -90,8 +90,7 @@
     <div class="login-form" >
         <form action="auth.php" method="post" style="font-size: 150%">
             <h2 class="text-center">Log in</h2>   
-            <span class="error text-danger" id="error1" style="display: none"></span>    
-            <!-- <?php //include('error.php'); ?> -->
+            <span class="error text-danger" id="error1" style="display: none"></span>
             <div class="form-group">
                 <input type="email" id="email" class="form-control" style="font-size: 110%" placeholder="Enter email" name="log_name" required>
             </div>
@@ -102,7 +101,7 @@
                 <input id="sign-in" type="submit" class="btn btn-primary btn-block" style="font-size: 110%" style="color: hsl(211, 100%, 50%);" name="login" value="Sign-in"></input>
             </div>
             <div class="clearfix">
-                <label class="pull-left checkbox-inline"><input type="checkbox">Remember me</label>
+                <!-- <label class="pull-left checkbox-inline"><input type="checkbox">Remember me</label> -->
                 <!-- <a href="#" class="pull-right">Forgot Password?</a> -->
             </div>        
         </form>

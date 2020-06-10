@@ -1,16 +1,25 @@
-<!-- <?php 
+<?php 
 session_start();
+require_once "link.php";
+$stmt = $link->prepare("SELECT * FROM users WHERE email = ?");
+$stmt->bind_param("s", $_SESSION['user']['email']);
 
-include_once 'session.php' 
+$stmt->execute();
+
+
+$result = $stmt->get_result();
+
+$row = $result->fetch_assoc();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">x
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -35,9 +44,9 @@ include_once 'session.php'
 		                <div class="col-md-12">
 		                    <form>
                               <div class="form-group row">
-                                <label for="username" class="col-4 col-form-label">User Name</label> 
+                                <label for="username" class="col-4 col-form-label">Username</label> 
                                 <div class="col-8">
-                                  <input id="username" name="username" placeholder="Username" class="form-control here" required="required" type="text">
+                                  <input id="username" name="username"  class="form-control here" required="required" type="text" value="<?php print $row['username']; ?>">
                                 </div>
                               </div>
                               <div class="form-group row">
@@ -55,7 +64,7 @@ include_once 'session.php'
                               <div class="form-group row">
                                 <label for="email" class="col-4 col-form-label">Email</label> 
                                 <div class="col-8">
-                                  <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
+                                  <input id="email" name="email" value="<?php print $row['email']; ?>" class="form-control here" required="required" type="text">
                                 </div>
                               </div>
                               <div class="form-group row">
@@ -92,4 +101,4 @@ include_once 'session.php'
 
 
 </body>
-</html> -->
+</html>
