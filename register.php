@@ -26,30 +26,54 @@
     
     $(document).ready(function(){    
         $("#registrate").click(function(){
-            event.preventDefault();
-                $.ajax('register1.php',{
+        event.preventDefault();
+            $.ajax('register1.php',{
+                type: 'POST',
+                data: {
+                    email:$("#email").val(),
+                    fname:$("#fname").val(),
+                    pass:$("#pass").val()
+                },
+                accepts:'application/json; charset=utf-8',
+                success: function(data){
+                    if (data.message == 'success') {
+                       window.location.href = "auth.php";
+                       $("#success").text('You successfully created an account');
+                       $("#success").show();
+                    }
+                },
+                error: function (errorData, textStatus ,errorMessage) {
+                    var msg = (errorData.responseJSON != null) ? errorData.responseJSON.errorMessage : '';
+                    $("#error2").text('Error: ' + msg);
+                    $("#error2").show();
+                }
+            });               
+        });
+
+        $('input[name="email"]').bind('blur',function(){
+                $.ajax({
+                    url: 'fix.php',
                     type: 'POST',
                     data: {
-                        email:$("#email").val(),
-                        fname:$("#fname").val(),
-                        pass:$("#pass").val()
+                        email:$("#email").val()
                     },
-                    accepts:'application/json; charset=utf-8',
+                    dataType: "html",
+                    beforeSend: function(){
+                        $("#wait").text('Wait a few minutes..');
+                        $("#wait").show();
+                    },
                     success: function(data){
-                        if (data.message == 'success') {
-                           window.location.href = "auth.php";
-                           $("#success").text('You successfully created an account');
-                           $("#success").show();
+                        data = JSON.parse(data);
+                        if (data == 'success') {
+                            $("#wait").text(data).css('color','green');
+                        }else{
+                            $("#wait").text(data).css('color','red');
                         }
-                    },
-                    error: function (errorData, textStatus ,errorMessage) {
-                        var msg = (errorData.responseJSON != null) ? errorData.responseJSON.errorMessage : '';
-                        $("#error2").text('Error: ' + msg);
-                        $("#error2").show();
                     }
-                });               
-            });
-        });
+                })
+            })
+
+    });
     </script>
 
 </head>
@@ -57,7 +81,7 @@
 
     <!-- navigation bar -->
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm" style="font-size: 110%">
-        <h5 class="my-0 mr-md-auto font-weight-normal" style="font-size: 125%"><a href="site.php" style="text-decoration: none">CourseSites</a></h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal" style="font-size: 125%"><a href="main.php" style="text-decoration: none">CourseSites</a></h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="main.php">Home</a>
             <a class="p-2 text-dark" href="#">Courses</a>
@@ -90,6 +114,7 @@
                                         <input type="email" class="form-control" name="email" id="email" placeholder="Enter your Email">
                                     </div>
                                 </div>
+                                <span class="error text-danger" id="wait" style="display: none"></span> 
                             </div>
                             <div class="form-group">
                                 <label for="password" class="cols-sm-2 control-label">Password</label>

@@ -1,0 +1,152 @@
+body{
+    font-size: 15px;
+    line-height: 1.43;
+    background-color: white;
+    margin: 0;
+    min-width: 768px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1200px;
+    margin-bottom: 100px;
+}
+
+.head{
+    background-color: white;
+    padding-bottom: 0px;
+    width: 100%;
+    color: hsl(211, 100%, 50%);
+}
+
+.registr{
+    text-align: right;
+}
+
+a{
+    color: hsl(211, 100%, 50%);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.english_lan{
+    text-align: right;
+}
+
+.engl{
+    padding-top: 1px;
+}
+
+.col-xxs-8{
+    width: 66.66666667%;
+    float: left;
+}
+
+.row--component-margin>*[class|=col]>.clp-component-render:first-child {
+    margin-top: 40px;
+}
+
+.curriculum-wrapper{
+    position: relative;
+}
+
+.in-page-offset-anchor{
+    top: -62px;
+    position: absolute;
+}
+
+.curriculum-wrapper .curriculum-header-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.curriculum-wrapper .header-left{
+    display: flex;
+    width: 45%;
+}
+
+.curriculum-wrapper .curriculum-header-title{
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.curriculum-wrapper .header-right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    padding-right: 100px;
+    width: 80%;
+}
+
+.dib{
+    display: inline-block;
+}
+
+.curriculum-wrapper .curriculum-header-length{
+    margin-left: 5px;
+    text-align: right;
+    width: 30%;
+}
+
+.section-header-right{
+    display: flex;
+    justify-content: end;
+    flex-basis: 40%;
+}
+
+.num-items-in-section{
+    display: block;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.section-header-length{
+    text-align: right;
+    width: 42%;
+}
+
+.section-title-text{
+    font-size: 100%;
+}
+
+.section-header-left{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 65%;
+}
+
+.section-container{
+    display: flex;
+    align-items: center;
+    background: hsl(0, 0%, 100%);
+    border: solid 1px hsl(211, 100%, 50%);
+    cursor: pointer;
+    height: auto;
+    margin-top: 3px;
+    padding: 10px 30px 10px 22px;
+}
+
+.section-title-wrapper{
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    font-size: 18px;
+    font-weight: 100%;
+}
+
+.section-title-toggle{
+    display: inline-block;
+    width: 12px;
+    height: auto!important;
+}
+
+.img{
+    float: r;
+}

@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if (!isset($_SESSION['user'])) {
+        header("Location: main.php");
+        return;
+    }
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -57,6 +65,9 @@
                     }  
                 });
             });
+
+
+
         });
 
     </script>
@@ -72,7 +83,7 @@
             <a class="p-2 text-dark" href="#">Courses</a>
             <a class="p-2 text-dark" href="#">About us</a>
         </nav>
-        <a class="btn btn-outline-primary" href="auth.php" style="font-size: 170%">Sign in</a>  
+        <a class="btn btn-outline-primary" href="auth.php" style="font-size: 170%"><span>Sign in</span></a>  
     </div>
 
     <!-- form authorization -->
