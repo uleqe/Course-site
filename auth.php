@@ -77,7 +77,7 @@
 <body>
     <!-- navigation bar -->
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm" style="font-size: 115%">
-        <h5 class="my-0 mr-md-auto font-weight-normal" style="font-size: 180%"><a href="site.php" style="text-decoration: none">CourseSites</a></h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal" style="font-size: 180%"><a href="auth.php" style="text-decoration: none">CourseSites</a></h5>
         <nav class="my-2 my-md-0 mr-md-3" style="font-size: 170%;">
             <a class="p-2 text-dark" href="site.php">Home</a>
             <a class="p-2 text-dark" href="#">Courses</a>

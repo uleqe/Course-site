@@ -64,11 +64,16 @@
                     },
                     success: function(data){
                         data = JSON.parse(data);
-                        if (data == 'success') {
+                        if (data != 'success') {
                             $("#wait").text(data).css('color','green');
+                            // $("#wait").show();
                         }else{
                             $("#wait").text(data).css('color','red');
+                            // $("#wait").show();
                         }
+                        // if(data == true){
+                        //     $("#wait").text('data').css('color','green');
+                        // }
                     }
                 })
             })
@@ -95,7 +100,7 @@
                 <div class="card">
                     <div class="card-header">Register</div>
                     <div class="card-body">
-                        <form class="form-horizontal" >
+                        <form class="form-horizontal" method="post  ">
                             <!-- <?php //include('error.php'); ?> -->
                             <span class="error text-danger" id="error2" style="display: none"></span> 
                             <span class="error text-danger" id="success" style="display: none"></span> 

@@ -12,8 +12,8 @@ if(!empty($_POST["email"]) && !empty($_POST["fname"]) && !empty($_POST["pass"]))
 
 	$row = $results->fetch_assoc();
 		
-	$sql = $link->prepare("INSERT INTO users(name,email,password)
-	VALUES ('".$_POST["fname"]."','".$_POST["email"]."','".$_POST["pass"]."')");
+	$sql = $link->prepare("INSERT INTO users(username,fname,lname,email,password,public_info)
+	VALUES ('".$_POST["fname"]."',null,null,'".$_POST["email"]."','".$_POST["pass"]."',null)");
 	
 	$sql->execute();
 
