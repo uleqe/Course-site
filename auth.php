@@ -60,7 +60,7 @@
                     },
                     error: function (errorData, textStatus, errorMessage) {
                         var msg = (errorData.responseJSON != null) ? errorData.responseJSON.errorMessage : '';
-                        $("#error1").text('Error: ' + msg + ', ' + errorData.status);
+                        $("#error1").text('Error: ' + msg);
                         $("#error1").show();
                     }  
                 });
@@ -83,7 +83,7 @@
             <a class="p-2 text-dark" href="#">Courses</a>
             <a class="p-2 text-dark" href="#">About us</a>
         </nav>
-        <a class="btn btn-outline-primary" href="auth.php" style="font-size: 170%"><span>Sign in</span></a>  
+        <!-- <a class="btn btn-outline-primary" href="auth.php" style="font-size: 170%"><span>Sign in</span></a>   -->
     </div>
 
     <!-- form authorization -->
