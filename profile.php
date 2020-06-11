@@ -49,8 +49,6 @@ $row = $result->fetch_assoc();
         </a>
 </div>
 
-
-
 <div class="container">
 	<div class="row">
 		<div class="col-md-9">
@@ -64,7 +62,7 @@ $row = $result->fetch_assoc();
 		            </div>
 		            <div class="row">
 		                <div class="col-md-12">
-                        <form method="post">
+                        <form method="post" action="update.php">
                         <span class="error text-danger" id="error1" style="display: none"></span>
                               <div class="form-group row">
                                 <label for="username" class="col-4 col-form-label">Username</label> 
@@ -87,13 +85,14 @@ $row = $result->fetch_assoc();
                               <div class="form-group row">
                                 <label for="email" class="col-4 col-form-label">Email</label> 
                                 <div class="col-8">
-                                  <input id="email" name="email" value="<?php print $row['email']; ?>" class="form-control here" required="required" type="text">
+                                  <input id="email" name="email" value="<?php print $row['email']; ?>" class="form-control here" required="required" type="text" >
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="publicinfo" class="col-4 col-form-label">Public Info</label> 
                                 <div class="col-8">
-                                  <textarea id="publicinfo" value="<?php print $row['public_info']; ?>" name="publicinfo" cols="40" rows="4" class="form-control"></textarea>
+                                  <a style="decoration:none;"><?php print $row['public_info']; ?></a>
+                                  <textarea id="publicinfo" value="" name="publicinfo" cols="40" rows="4" class="form-control"></textarea>
                                 </div>
                               </div>
                               <div class="form-group row">
@@ -123,35 +122,35 @@ $row = $result->fetch_assoc();
 </div>
 
 <script>
-      $(document).ready(function() {
-        $("#update").click(function(){
-                event.preventDefault();
-                $.ajax('update.php', {
-                    type: 'POST',  
-                    data: { username:   $("#email").val(),
-                            newpass:$("#newpass").val(),
-                            fname:$('#name').val(),
-                            lname:$('#lastname').val(),
-                            p_info:$('#publicinfo').val(),
-                            email:$(#email).val()
-                          }
-                    accepts: 'application/json; charset=utf-8',
-                    success: function (response) {
-                        // if (data.message == 'success') {
-                        //     alert("Data successfully updated!");
-                        //     window.location.href = "profile.php";
-                        // }
-                        alert(response);
-                    }
-                    // error: function (errorData, textStatus, errorMessage) {
-                    //     var msg = (errorData.responseJSON != null) ? errorData.responseJSON.errorMessage : '';
-                    //     $("#error1").text('Error: ' + msg + ', ' + errorData.status);
-                    //     $("#error1").show();
-                    // }  
-                });
+    //   $(document).ready(function() {
+    //     $("#update").click(function(){
+    //             event.preventDefault();
+    //             $.ajax('update.php', {
+    //                 type: 'POST',  
+    //                 data: { username:   $("#email").val(),
+    //                         newpass:$("#newpass").val(),
+    //                         fname:$('#name').val(),
+    //                         lname:$('#lastname').val(),
+    //                         p_info:$('#publicinfo').val(),
+    //                         email:$('#email').val()
+    //                       }
+    //                 accepts: 'application/json; charset=utf-8',
+    //                 success: function (data) {
+    //                     if (data.message == 'success') {
+    //                         alert("Data successfully updated!");
+    //                         window.location.href = "profile.php";
+    //                     }
+    //                     // alert(response);
+    //                 }
+    //                 error: function (errorData, textStatus, errorMessage) {
+    //                     var msg = (errorData.responseJSON != null) ? errorData.responseJSON.errorMessage : '';
+    //                     $("#error1").text('Error: ' + msg + ', ' + errorData.status);
+    //                     $("#error1").show();
+    //                 }  
+    //             });
 
-      });
-    });
+    //   });
+    // });
     </script>
 
 </body>
